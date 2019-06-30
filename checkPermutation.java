@@ -12,16 +12,16 @@ public class checkPermutation{
         HashMap<Character,Boolean> str = new  HashMap<Character,Boolean>();
 
         for(int i=0; i<str1.length(); i++) {
-            str.put(str1.charAt(i), true);
+            str.put(str1.charAt(i), false);
         }
 
         for(int i=0; i<str2.length(); i++) {
             if(str.containsKey(str2.charAt(i))){
-                str.replace(str2.charAt(i), false);
+                str.replace(str2.charAt(i), true); // character match
             }
         }
 
-        if(str.values().contains(true)) return false;
+        if(str.values().contains(false)) return false;
         else return true;
     }
 
