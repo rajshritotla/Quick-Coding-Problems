@@ -2,12 +2,12 @@
  * Given two strings, write a method to decide if one is a permutation of the other.
  */
 
-import java.util.HashMap;
+ import java.util.HashMap;
 public class checkPermutation{
 
     public boolean checkStrings(String str1, String str2){
         
-        if(str1.length()!=str2.length()) return false;      // string length differ
+        if(str1.length()!=str2.length()) return false;      // string length can't be different
 
         HashMap<Character,Boolean> str = new  HashMap<Character,Boolean>();
 
