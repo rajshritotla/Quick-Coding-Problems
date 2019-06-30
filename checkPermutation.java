@@ -1,4 +1,6 @@
-// given two strings, check if one is permutation of other
+/**
+ * Given two strings, write a method to decide if one is a permutation of the other.
+ */
 
 import java.util.HashMap;
 public class checkPermutation{
