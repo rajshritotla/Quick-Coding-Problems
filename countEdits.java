@@ -4,7 +4,7 @@
  * write a function to check if they are one edit (or zero edits) away.
  */
 
-public class oneOrZeroEdits{
+public class OneOrZeroEdits{
 
     public void count(StringBuilder original_str, StringBuilder edited_str){
 
@@ -31,10 +31,10 @@ public class oneOrZeroEdits{
         StringBuilder o = "pale";
         StringBuilder e = "ple";
         
-        new oneOrZeroEdits().count(o,e);
+        new OneOrZeroEdits().count(o,e);
 
         o="pale";e="bake";
-        new oneOrZeroEdits().count(o,e);
+        new OneOrZeroEdits().count(o,e);
         
     }
 }
