@@ -27,11 +27,10 @@ class Tree{
 
   int getHeight(TreeNode root){     // Root node height is 0 
     if(root==null) return -1;   
-    System.out.println(" " + root.data + " "); 
-    System.out.print(" ");
-    System.out.print(Math.max(getHeight(root.left),getHeight(root.right))+1);
-    System.out.println(" ");
-    //System.out.print(".. ");
+            System.out.println(" " + root.data + " "); 
+            System.out.print(" ");
+            System.out.print(Math.max(getHeight(root.left),getHeight(root.right))+1);
+            System.out.println(" ");
     return Math.max(getHeight(root.left),getHeight(root.right))+1;
   }
 
