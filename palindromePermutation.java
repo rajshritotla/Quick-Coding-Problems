@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.Collection;
-public class palindromePermutation{
+public class PalindromePermutation{
 
     public boolean checkPalindromeConditions(String str1, String str2){
         
@@ -75,15 +75,15 @@ public class palindromePermutation{
     public static void main(String[] args) {
 
         /*
-        System.out.println(new palindromePermutation().checkStrings("coco cola","cola coco")); // F
+        System.out.println(new PalindromePermutation().checkStrings("coco cola","cola coco")); // F
 
-        System.out.println(new palindromePermutation().checkStrings("coco hola","coco cola"));   //F
+        System.out.println(new PalindromePermutation().checkStrings("coco hola","coco cola"));   //F
 
-        System.out.println(new palindromePermutation().checkStrings("coco cola","colaco co"));   //F
+        System.out.println(new PalindromePermutation().checkStrings("coco cola","colaco co"));   //F
 
-        System.out.println(new palindromePermutation().checkStrings("okok popo","pook pook"));   //T
+        System.out.println(new PalindromePermutation().checkStrings("okok popo","pook pook"));   //T
 */
-        System.out.println(new palindromePermutation().checkStrings("okok p","pkok o"));   //T
+        System.out.println(new PalindromePermutation().checkStrings("okok p","pkok o"));   //T
 
 
     }
