@@ -3,7 +3,7 @@
  * algorithm to create a binary search tree with minimal height.
  */
 
-public class minimalBST{
+public class MinimalBST{
 
     public Node createMinimal(int ary[]){
         return createMinimal(ary,0,ary.length-1);
@@ -33,7 +33,7 @@ public class minimalBST{
 
         int ele_list[] = {1,2,3,4,5,6};
         
-        Node root = new minimalBST().createMinimal(ele_list);
+        Node root = new MinimalBST().createMinimal(ele_list);
         
         System.out.println(root.data);
         System.out.println(root.left.data);
