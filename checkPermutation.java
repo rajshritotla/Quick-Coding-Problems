@@ -3,7 +3,7 @@
  */
 
  import java.util.HashMap;
-public class checkPermutation{
+public class CheckPermutation{
 
     public boolean checkStrings(String str1, String str2){
         
