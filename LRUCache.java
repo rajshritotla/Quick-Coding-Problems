@@ -22,7 +22,6 @@ class LRUCache {
     }
     
     public void put(int key, int value) {
-       
         
            if(!map.containsKey(key)) {
                 if(dq.size()==cap){
