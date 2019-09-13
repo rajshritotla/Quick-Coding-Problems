@@ -1,0 +1,101 @@
+/**
+A transaction is possibly invalid if:
+
+the amount exceeds $1000, or;
+if it occurs within (and including) 60 minutes of another transaction with the same name in a different city.
+Each transaction string transactions[i] consists of comma separated values representing the name, time (in minutes), amount, and city of the transaction.
+
+Given a list of transactions, return a list of transactions that are possibly invalid.  You may return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: transactions = ["alice,20,800,mtv","alice,50,100,beijing"]
+Output: ["alice,20,800,mtv","alice,50,100,beijing"]
+Explanation: The first transaction is invalid because the second transaction occurs within a difference of 60 minutes, have the same name and is in a different city. Similarly the second one is invalid too.
+Example 2:
+
+Input: transactions = ["alice,20,800,mtv","alice,50,1200,mtv"]
+Output: ["alice,50,1200,mtv"]
+Example 3:
+
+Input: transactions = ["alice,20,800,mtv","bob,50,1200,mtv"]
+Output: ["bob,50,1200,mtv"]
+ 
+
+Constraints:
+
+transactions.length <= 1000
+Each transactions[i] takes the form "{name},{time},{amount},{city}"
+Each {name} and {city} consist of lowercase English letters, and have lengths between 1 and 10.
+Each {time} consist of digits, and represent an integer between 0 and 1000.
+Each {amount} consist of digits, and represent an integer between 0 and 2000.
+
+*/
+
+public List<String> invalidTransactions(String[] transactions) {
+        
+        ArrayList<String> invalidTrans = new ArrayList<>();
+        
+        // value index
+        HashMap<String,Integer> name = new HashMap<String,Integer>();
+
+        // index value
+        HashMap<Integer,Integer> time = new HashMap<Integer,Integer>();
+        HashMap<Integer,Integer> amount = new HashMap<Integer,Integer>();
+        HashMap<Integer,String> city= new HashMap<Integer,String>();
+
+        restart:
+        for(int i=0; i< transactions.length; i++){
+
+            String[] transaction = transactions[i].split(",");
+
+            String thisName = transaction[0];
+            int thisTime = Integer.parseInt(transaction[1]);
+            int thisAmount = Integer.parseInt(transaction[2]);
+            String thisCity = transaction[3];
+
+            // the amount exceeds $1000
+            if(thisAmount>1000){
+                
+                //if(!(invalidTrans.contains(transactions[i]))){
+                    invalidTrans.add(transactions[i]);
+                continue restart;
+            }
+        
+            // first transcation add to hashset
+            if(!name.containsKey(thisName)){
+                name.put(thisName,i);
+                time.put(i,thisTime);
+                amount.put(i,thisAmount);
+                city.put(i,thisCity);
+            }
+            else if(name.containsKey(thisName)){
+                
+                int prevIndex = name.get(thisName);
+                
+                if(time.get(prevIndex)-thisTime < 60 ){
+                    if(city.get(prevIndex).equals(thisCity)){
+                        if(!(invalidTrans.contains(transactions[prevIndex]))){
+                            invalidTrans.add(transactions[prevIndex]);
+                        }
+                        if(!(invalidTrans.contains(transactions[i]))){
+                            invalidTrans.add(transactions[i]);
+                        }
+                    }                        
+                }
+
+                name.put(thisName,i);
+                time.put(i,thisTime);
+                amount.put(i,thisAmount);
+                city.put(i,thisCity);
+            }
+        
+        }
+        return invalidTrans;
+        
+    }
+
+
+
