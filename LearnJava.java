@@ -73,6 +73,28 @@ class LearnJava{
         System.out.println("But while getting element do -1 "+a.get(0)); //1
         System.out.println("Arraylist index starts with 0 to size-1");
 
+        System.out.println();
+        System.out.println("**************************************");
+        ArrayList<Integer> b = new ArrayList<Integer>();
+        System.out.println("1: " + b.toString());
+        b.add(5);
+        System.out.println("2: " + b.toString());
+        b.addAll(Arrays.asList(1,2));
+        System.out.println("3: " + b.toString());
+
+        System.out.println();
+        
+        ArrayList<Integer> c = new ArrayList<Integer>();
+        System.out.println("1: " + c.toString());
+        c.addAll(Arrays.asList(1,2));
+        System.out.println("2: " + c.toString());
+        c.add(5);
+        System.out.println("3: " + c.toString());
+        c.addAll(Arrays.asList(3,4));
+        System.out.println("4: " + c.toString());
+        System.out.println();
+
+
 
         /*
         LinkedHashSet h = new LinkedHashSet<Integer>();
