@@ -7,7 +7,7 @@ public class ReverseString{
 
     String reverseWord(String s) {
         StringBuffer str = new StringBuffer(s);
-        return s.reverse().toString();
+        return str.reverse().toString();
     }
 
     String reverseSentence(String s){
