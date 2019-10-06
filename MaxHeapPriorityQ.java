@@ -56,13 +56,16 @@ public class MaxHeapPriorityQ{
         System.out.println(max.toString());
 
         System.out.println("....................................");
+        
         max.offer(5);
         max.offer(-2);
         max.offer(5);
         max.offer(-2);
         System.out.println("Wrongggggg when offer: "+max.toString());
+
         max.add(7);
         System.out.println("Correct after add: "+max.toString());
+        
         //max.add(0);
         
         Object[] x;// = new Object[2];
